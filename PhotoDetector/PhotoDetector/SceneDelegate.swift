@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  OCRDetector
+//  PhotoDetector
 //
-//  Created by imseonghyeon on 1/31/24.
+//  Created by imseonghyeon on 2/1/24.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ViewController()
+        window?.rootViewController = PhotoDetectorViewController()
         window?.makeKeyAndVisible()
     }
 

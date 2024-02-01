@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  OCRDetector
+//  PhotoDetector
 //
-//  Created by imseonghyeon on 1/31/24.
+//  Created by imseonghyeon on 2/1/24.
 //
 
 import UIKit

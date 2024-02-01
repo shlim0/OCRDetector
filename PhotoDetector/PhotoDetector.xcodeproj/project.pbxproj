@@ -7,27 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6A9E34E2B6A6D7F00034144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E34D2B6A6D7F00034144 /* AppDelegate.swift */; };
-		A6A9E3502B6A6D7F00034144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E34F2B6A6D7F00034144 /* SceneDelegate.swift */; };
-		A6A9E3522B6A6D7F00034144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3512B6A6D7F00034144 /* ViewController.swift */; };
-		A6A9E3552B6A6D7F00034144 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A9E3532B6A6D7F00034144 /* Main.storyboard */; };
-		A6A9E3572B6A6D8000034144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6A9E3562B6A6D8000034144 /* Assets.xcassets */; };
-		A6A9E35A2B6A6D8000034144 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A9E3582B6A6D8000034144 /* LaunchScreen.storyboard */; };
+		A6A9E36F2B6B59F600034144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E36E2B6B59F600034144 /* AppDelegate.swift */; };
+		A6A9E3712B6B59F600034144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3702B6B59F600034144 /* SceneDelegate.swift */; };
+		A6A9E3732B6B59F600034144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3722B6B59F600034144 /* ViewController.swift */; };
+		A6A9E3782B6B59F700034144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6A9E3772B6B59F700034144 /* Assets.xcassets */; };
+		A6A9E37B2B6B59F700034144 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A9E3792B6B59F700034144 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A6A9E34A2B6A6D7F00034144 /* OCRDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCRDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6A9E34D2B6A6D7F00034144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6A9E34F2B6A6D7F00034144 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A6A9E3512B6A6D7F00034144 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A6A9E3542B6A6D7F00034144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A6A9E3562B6A6D8000034144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A6A9E3592B6A6D8000034144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A6A9E35B2B6A6D8000034144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6A9E36B2B6B59F600034144 /* PhotoDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6A9E36E2B6B59F600034144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A6A9E3702B6B59F600034144 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A6A9E3722B6B59F600034144 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6A9E3772B6B59F700034144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6A9E37A2B6B59F700034144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A6A9E37C2B6B59F700034144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A6A9E3472B6A6D7F00034144 /* Frameworks */ = {
+		A6A9E3682B6B59F600034144 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,72 +35,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A6A9E3412B6A6D7F00034144 = {
+		A6A9E3622B6B59F600034144 = {
 			isa = PBXGroup;
 			children = (
-				A6A9E34C2B6A6D7F00034144 /* OCRDetector */,
-				A6A9E34B2B6A6D7F00034144 /* Products */,
+				A6A9E36D2B6B59F600034144 /* PhotoDetector */,
+				A6A9E36C2B6B59F600034144 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A6A9E34B2B6A6D7F00034144 /* Products */ = {
+		A6A9E36C2B6B59F600034144 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A6A9E34A2B6A6D7F00034144 /* OCRDetector.app */,
+				A6A9E36B2B6B59F600034144 /* PhotoDetector.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A6A9E34C2B6A6D7F00034144 /* OCRDetector */ = {
+		A6A9E36D2B6B59F600034144 /* PhotoDetector */ = {
 			isa = PBXGroup;
 			children = (
-				A6A9E34D2B6A6D7F00034144 /* AppDelegate.swift */,
-				A6A9E34F2B6A6D7F00034144 /* SceneDelegate.swift */,
-				A6A9E3512B6A6D7F00034144 /* ViewController.swift */,
-				A6A9E3532B6A6D7F00034144 /* Main.storyboard */,
-				A6A9E3562B6A6D8000034144 /* Assets.xcassets */,
-				A6A9E3582B6A6D8000034144 /* LaunchScreen.storyboard */,
-				A6A9E35B2B6A6D8000034144 /* Info.plist */,
+				A6A9E36E2B6B59F600034144 /* AppDelegate.swift */,
+				A6A9E3702B6B59F600034144 /* SceneDelegate.swift */,
+				A6A9E3722B6B59F600034144 /* ViewController.swift */,
+				A6A9E3772B6B59F700034144 /* Assets.xcassets */,
+				A6A9E3792B6B59F700034144 /* LaunchScreen.storyboard */,
+				A6A9E37C2B6B59F700034144 /* Info.plist */,
 			);
-			path = OCRDetector;
+			path = PhotoDetector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A6A9E3492B6A6D7F00034144 /* OCRDetector */ = {
+		A6A9E36A2B6B59F600034144 /* PhotoDetector */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A6A9E35E2B6A6D8000034144 /* Build configuration list for PBXNativeTarget "OCRDetector" */;
+			buildConfigurationList = A6A9E37F2B6B59F700034144 /* Build configuration list for PBXNativeTarget "PhotoDetector" */;
 			buildPhases = (
-				A6A9E3462B6A6D7F00034144 /* Sources */,
-				A6A9E3472B6A6D7F00034144 /* Frameworks */,
-				A6A9E3482B6A6D7F00034144 /* Resources */,
+				A6A9E3672B6B59F600034144 /* Sources */,
+				A6A9E3682B6B59F600034144 /* Frameworks */,
+				A6A9E3692B6B59F600034144 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = OCRDetector;
-			productName = OCRDetector;
-			productReference = A6A9E34A2B6A6D7F00034144 /* OCRDetector.app */;
+			name = PhotoDetector;
+			productName = PhotoDetector;
+			productReference = A6A9E36B2B6B59F600034144 /* PhotoDetector.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A6A9E3422B6A6D7F00034144 /* Project object */ = {
+		A6A9E3632B6B59F600034144 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					A6A9E3492B6A6D7F00034144 = {
+					A6A9E36A2B6B59F600034144 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = A6A9E3452B6A6D7F00034144 /* Build configuration list for PBXProject "OCRDetector" */;
+			buildConfigurationList = A6A9E3662B6B59F600034144 /* Build configuration list for PBXProject "PhotoDetector" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,55 +107,46 @@
 				en,
 				Base,
 			);
-			mainGroup = A6A9E3412B6A6D7F00034144;
-			productRefGroup = A6A9E34B2B6A6D7F00034144 /* Products */;
+			mainGroup = A6A9E3622B6B59F600034144;
+			productRefGroup = A6A9E36C2B6B59F600034144 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A6A9E3492B6A6D7F00034144 /* OCRDetector */,
+				A6A9E36A2B6B59F600034144 /* PhotoDetector */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A6A9E3482B6A6D7F00034144 /* Resources */ = {
+		A6A9E3692B6B59F600034144 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6A9E35A2B6A6D8000034144 /* LaunchScreen.storyboard in Resources */,
-				A6A9E3572B6A6D8000034144 /* Assets.xcassets in Resources */,
-				A6A9E3552B6A6D7F00034144 /* Main.storyboard in Resources */,
+				A6A9E37B2B6B59F700034144 /* LaunchScreen.storyboard in Resources */,
+				A6A9E3782B6B59F700034144 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A6A9E3462B6A6D7F00034144 /* Sources */ = {
+		A6A9E3672B6B59F600034144 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6A9E3522B6A6D7F00034144 /* ViewController.swift in Sources */,
-				A6A9E34E2B6A6D7F00034144 /* AppDelegate.swift in Sources */,
-				A6A9E3502B6A6D7F00034144 /* SceneDelegate.swift in Sources */,
+				A6A9E3732B6B59F600034144 /* ViewController.swift in Sources */,
+				A6A9E36F2B6B59F600034144 /* AppDelegate.swift in Sources */,
+				A6A9E3712B6B59F600034144 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A6A9E3532B6A6D7F00034144 /* Main.storyboard */ = {
+		A6A9E3792B6B59F700034144 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A6A9E3542B6A6D7F00034144 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A6A9E3582B6A6D8000034144 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A6A9E3592B6A6D8000034144 /* Base */,
+				A6A9E37A2B6B59F700034144 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +154,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A6A9E35C2B6A6D8000034144 /* Debug */ = {
+		A6A9E37D2B6B59F700034144 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -229,7 +217,7 @@
 			};
 			name = Debug;
 		};
-		A6A9E35D2B6A6D8000034144 /* Release */ = {
+		A6A9E37E2B6B59F700034144 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -285,7 +273,7 @@
 			};
 			name = Release;
 		};
-		A6A9E35F2B6A6D8000034144 /* Debug */ = {
+		A6A9E3802B6B59F700034144 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -294,10 +282,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TTKL6566T6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OCRDetector/Info.plist;
+				INFOPLIST_FILE = PhotoDetector/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -305,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JJong.OCRDetector;
+				PRODUCT_BUNDLE_IDENTIFIER = JJong.PhotoDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -313,7 +300,7 @@
 			};
 			name = Debug;
 		};
-		A6A9E3602B6A6D8000034144 /* Release */ = {
+		A6A9E3812B6B59F700034144 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -322,10 +309,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TTKL6566T6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OCRDetector/Info.plist;
+				INFOPLIST_FILE = PhotoDetector/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -333,7 +319,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = JJong.OCRDetector;
+				PRODUCT_BUNDLE_IDENTIFIER = JJong.PhotoDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -344,25 +330,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A6A9E3452B6A6D7F00034144 /* Build configuration list for PBXProject "OCRDetector" */ = {
+		A6A9E3662B6B59F600034144 /* Build configuration list for PBXProject "PhotoDetector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A6A9E35C2B6A6D8000034144 /* Debug */,
-				A6A9E35D2B6A6D8000034144 /* Release */,
+				A6A9E37D2B6B59F700034144 /* Debug */,
+				A6A9E37E2B6B59F700034144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A6A9E35E2B6A6D8000034144 /* Build configuration list for PBXNativeTarget "OCRDetector" */ = {
+		A6A9E37F2B6B59F700034144 /* Build configuration list for PBXNativeTarget "PhotoDetector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A6A9E35F2B6A6D8000034144 /* Debug */,
-				A6A9E3602B6A6D8000034144 /* Release */,
+				A6A9E3802B6B59F700034144 /* Debug */,
+				A6A9E3812B6B59F700034144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A6A9E3422B6A6D7F00034144 /* Project object */;
+	rootObject = A6A9E3632B6B59F600034144 /* Project object */;
 }
