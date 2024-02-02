@@ -8,6 +8,12 @@
 import CoreImage
 
 final class ImageProcessingUseCase: ImageProcessingUseCaseProtocol {
+    // MARK: - Namespace
+    private enum Constants {
+        static let defaultSaturation: Double = 0.0
+        static let defaultContrast: Double = 10.0
+    }
+    
     // MARK: - Dependencies
     private let context: CIContext
     
@@ -33,10 +39,10 @@ final class ImageProcessingUseCase: ImageProcessingUseCaseProtocol {
         guard let preProcessingFilter = CIFilter(name: "CIColorControls") else { return nil }
         
         preProcessingFilter.setValue(CIImage(cgImage: correctedCGImage), forKey: kCIInputImageKey)
-        preProcessingFilter.setValue(PhotoDetectorViewController.defaultSaturation, forKey: kCIInputSaturationKey)
+        preProcessingFilter.setValue(Constants.defaultSaturation, forKey: kCIInputSaturationKey)
         
         // MARK: - 이미지 대비 조절
-        preProcessingFilter.setValue(PhotoDetectorViewController.defaultContrast, forKey: kCIInputContrastKey)
+        preProcessingFilter.setValue(Constants.defaultContrast, forKey: kCIInputContrastKey)
         
         guard let preProcessedCIImage = preProcessingFilter.outputImage else { return nil }
         guard let preProcessedCGImage = context.createCGImage(preProcessedCIImage, from: preProcessedCIImage.extent) else { return nil }
