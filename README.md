@@ -1,1 +1,1 @@
-# OCRDetector
+# PhotoDetector
