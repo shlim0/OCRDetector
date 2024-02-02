@@ -7,6 +7,6 @@
 
 import UIKit
 
-final class PhotoPreviewViewController {
+final class PhotoPreviewViewController: UIViewController {
     
 }

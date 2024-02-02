@@ -7,6 +7,6 @@
 
 import UIKit
 
-final class PhotoRepointingViewController {
+final class PhotoRepointingViewController: UIViewController {
     
 }
