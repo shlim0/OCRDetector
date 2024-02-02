@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A60435422B6CD520000F3C4D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60435412B6CD520000F3C4D /* UIView+Extension.swift */; };
 		A6A9E36F2B6B59F600034144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E36E2B6B59F600034144 /* AppDelegate.swift */; };
 		A6A9E3712B6B59F600034144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3702B6B59F600034144 /* SceneDelegate.swift */; };
 		A6A9E3732B6B59F600034144 /* PhotoDectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3722B6B59F600034144 /* PhotoDectorViewController.swift */; };
@@ -28,9 +29,11 @@
 		A6A9E3AD2B6C02A000034144 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3AC2B6C02A000034144 /* Photo.swift */; };
 		A6A9E3AF2B6C7E4500034144 /* ImageDetectorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3AE2B6C7E4500034144 /* ImageDetectorUseCase.swift */; };
 		A6A9E3B12B6C81AB00034144 /* ImageDetectorUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3B02B6C81AB00034144 /* ImageDetectorUseCaseProtocol.swift */; };
+		A6A9E3B52B6CAA7500034144 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3B42B6CAA7500034144 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A60435412B6CD520000F3C4D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A6A9E36B2B6B59F600034144 /* PhotoDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A9E36E2B6B59F600034144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A9E3702B6B59F600034144 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		A6A9E3AC2B6C02A000034144 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A6A9E3AE2B6C7E4500034144 /* ImageDetectorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetectorUseCase.swift; sourceTree = "<group>"; };
 		A6A9E3B02B6C81AB00034144 /* ImageDetectorUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetectorUseCaseProtocol.swift; sourceTree = "<group>"; };
+		A6A9E3B42B6CAA7500034144 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 		A6A9E3842B6B7FB400034144 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A6A9E3B22B6CAA4800034144 /* Utilities */,
 				A6A9E3862B6B7FC800034144 /* View */,
 				A6A9E3852B6B7FC000034144 /* ViewModel */,
 			);
@@ -224,6 +229,23 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		A6A9E3B22B6CAA4800034144 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A6A9E3B32B6CAA6800034144 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A6A9E3B32B6CAA6800034144 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A6A9E3B42B6CAA7500034144 /* UIColor+Extension.swift */,
+				A60435412B6CD520000F3C4D /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,10 +331,12 @@
 				A6A9E3AD2B6C02A000034144 /* Photo.swift in Sources */,
 				A6A9E3712B6B59F600034144 /* SceneDelegate.swift in Sources */,
 				A6A9E3A62B6BF95900034144 /* PhotoRepointingViewController.swift in Sources */,
+				A60435422B6CD520000F3C4D /* UIView+Extension.swift in Sources */,
 				A6A9E3892B6B808D00034144 /* ImageProcessingUseCase.swift in Sources */,
 				A6A9E3A42B6BF90D00034144 /* PhotoPreviewViewController.swift in Sources */,
 				A6A9E3AA2B6BFA1F00034144 /* PhotoPreviewViewModel.swift in Sources */,
 				A6A9E3922B6B8A6300034144 /* DetectorBuilder.swift in Sources */,
+				A6A9E3B52B6CAA7500034144 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
