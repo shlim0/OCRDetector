@@ -9,7 +9,7 @@ import UIKit
 
 protocol PhotoDetectorViewModelProtocol {
     func movedDisplay(uiImage: UIImage, detectorBuilder: DetectorBuilderProtocol) -> CIRectangleFeature?
-    func pushTakingPhotoButton(uiImage: UIImage)
+    func pushedShutterButton(uiImage: UIImage)
 }
 
 final class PhotoDetectorViewModel: PhotoDetectorViewModelProtocol {
@@ -64,7 +64,7 @@ final class PhotoDetectorViewModel: PhotoDetectorViewModelProtocol {
         }
     }
     
-    func pushTakingPhotoButton(uiImage: UIImage) {
+    func pushedShutterButton(uiImage: UIImage) {
         guard let rectangle = movedDisplay(uiImage: uiImage) else { return }
         guard let ciImage = convertUIImageToCIImage(uiImage: uiImage) else { return }
         guard let cgImage = imageProcessingUseCase.processImage(ciImage: ciImage, rectangle: rectangle) else { return }

@@ -20,6 +20,7 @@ final class PhotoDetectorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        
         bind()
     }
     
@@ -55,7 +56,7 @@ final class PhotoDetectorViewController: UIViewController {
         return button
     }()
     
-    private let takingPhotoButton: UIButton = {
+    private let shutterButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "circle.dashed.inset.filled"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +78,7 @@ extension PhotoDetectorViewController {
 extension PhotoDetectorViewController {
     private func configureView() {
         view.backgroundColor = .white
-        view.addsubViews(cameraView, thumbnail, takingPhotoButton)
+        view.addsubViews(cameraView, thumbnail, shutterButton)
         configureNavigationBar()
         configureConstraint()
     }
@@ -103,8 +104,8 @@ extension PhotoDetectorViewController {
         ])
         
         NSLayoutConstraint.activate([
-            takingPhotoButton.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
-            takingPhotoButton.centerYAnchor.constraint(equalTo: thumbnail.centerYAnchor)
+            shutterButton.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
+            shutterButton.centerYAnchor.constraint(equalTo: thumbnail.centerYAnchor)
         ])
     }
     
