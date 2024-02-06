@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A60435422B6CD520000F3C4D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60435412B6CD520000F3C4D /* UIView+Extension.swift */; };
+		A63C08622B728F6400A8FC9A /* TemporaryPhotoDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C08612B728F6400A8FC9A /* TemporaryPhotoDetectorViewController.swift */; };
 		A6A9E36F2B6B59F600034144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E36E2B6B59F600034144 /* AppDelegate.swift */; };
 		A6A9E3712B6B59F600034144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3702B6B59F600034144 /* SceneDelegate.swift */; };
 		A6A9E3732B6B59F600034144 /* PhotoDectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3722B6B59F600034144 /* PhotoDectorViewController.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		A60435412B6CD520000F3C4D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		A63C08612B728F6400A8FC9A /* TemporaryPhotoDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryPhotoDetectorViewController.swift; sourceTree = "<group>"; };
 		A6A9E36B2B6B59F600034144 /* PhotoDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A9E36E2B6B59F600034144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A9E3702B6B59F600034144 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				A6A9E3722B6B59F600034144 /* PhotoDectorViewController.swift */,
+				A63C08612B728F6400A8FC9A /* TemporaryPhotoDetectorViewController.swift */,
 				A6A9E3A52B6BF95900034144 /* PhotoRepointingViewController.swift */,
 				A6A9E3A32B6BF90D00034144 /* PhotoPreviewViewController.swift */,
 			);
@@ -323,6 +326,7 @@
 				A6A9E3732B6B59F600034144 /* PhotoDectorViewController.swift in Sources */,
 				A6A9E36F2B6B59F600034144 /* AppDelegate.swift in Sources */,
 				A6A9E3972B6BAE4000034144 /* CIDetector+Extension.swift in Sources */,
+				A63C08622B728F6400A8FC9A /* TemporaryPhotoDetectorViewController.swift in Sources */,
 				A6A9E3A82B6BFA1100034144 /* PhotoRepointingViewModel.swift in Sources */,
 				A6A9E38D2B6B86EC00034144 /* DetectorBuilderError.swift in Sources */,
 				A6A9E39F2B6BBCF700034144 /* Detectable.swift in Sources */,
