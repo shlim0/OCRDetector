@@ -5,7 +5,6 @@
 //  Created by imseonghyeon on 2/1/24.
 //
 
-
 enum DetectorError: Error, CustomDebugStringConvertible {
     case failedConversionToCIRectangleFeature
     case notFoundCIRectangleFeature
