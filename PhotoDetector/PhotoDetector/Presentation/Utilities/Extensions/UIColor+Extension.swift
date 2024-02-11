@@ -21,6 +21,6 @@ extension UIColor {
     }
     
     class var defaultNavigationBarColor: UIColor {
-        UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        UIColor.black.withAlphaComponent(0.5)
     }
 }

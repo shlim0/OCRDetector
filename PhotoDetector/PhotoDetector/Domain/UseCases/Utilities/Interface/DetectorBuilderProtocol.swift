@@ -10,7 +10,7 @@ import CoreImage
 protocol DetectorBuilderProtocol {
     var type: String { get }
     var options: [String : Any]? { get }
-    func build(context: CIContext) throws -> CIDetector
+    func build(with: CIContext) throws -> CIDetector
 }
 
 extension DetectorBuilderProtocol {
