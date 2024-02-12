@@ -19,6 +19,9 @@ final class PhotoInputUseCase: NSObject, PhotoInputUseCaseProtocol {
     private let context: CIContext
     private let detectorManager: DetectorManagerable = DetectorManager()
     
+    // MARK: - Flag Property
+    private var isDrawing = false
+    
     // MARK: - Delegate
     var delegate: PhotoDetectorViewModelProtocol?
     
@@ -45,19 +48,26 @@ final class PhotoInputUseCase: NSObject, PhotoInputUseCaseProtocol {
 // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
 extension PhotoInputUseCase {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer), !isDrawing else { return }
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
         
-        do {
-            let rectangle = try detectRectangle(ciImage: ciImage)
-            drawPreviewLayer(using: ciImage, as: rectangle)
-        } catch {
-            let photoOutput = PhotoOutput(image: ciImage, rectangle: nil, sesson: detectorManager.session)
+        Task {
+            isDrawing = true
+                        
+            do {
+                let rectangle = try detectRectangle(ciImage: ciImage)
+                let photoOutput = try await drawPreviewLayer(using: ciImage, as: rectangle)
+                delegate?.latestPhotoOutput = photoOutput
+            } catch {
+                let photoOutput = PhotoOutput(image: ciImage, rectangle: nil, session: detectorManager.session)
+                delegate?.latestPhotoOutput = photoOutput
+            }
             
-            delegate?.latestPhotoOutput = photoOutput
+            try await Task.sleep(nanoseconds: .halfSecond)
+            isDrawing = false
         }
     }
-    
+
     func detectRectangle(ciImage: CIImage) throws -> CIRectangleFeature {
         let detectorBuilder = DetectorBuilder()
         let detector = try detectorBuilder.build(with: context)
@@ -67,29 +77,32 @@ extension PhotoInputUseCase {
         return rectangle
     }
     
-    func drawPreviewLayer(using ciImage: CIImage, as rectangle: CIRectangleFeature) {
+    func drawPreviewLayer(using ciImage: CIImage, as rectangle: CIRectangleFeature) async throws -> PhotoOutput {
         Task { @MainActor in
             let windows = UIApplication.shared.windows
             guard let photoDetectorViewController =  windows.first?.rootViewController else { return }
-            
+        
             let shapeLayer = createShapeLayer(using: ciImage, as: rectangle, to: photoDetectorViewController)
-            
-            let rectangle = Rectangle(topLeft: rectangle.topLeft,
-                                      topRight: rectangle.topRight,
-                                      bottomLeft: rectangle.bottomLeft,
-                                      bottomRight: rectangle.bottomRight,
-                                      layer: shapeLayer)
-            
-            let photoOutput = PhotoOutput(image: ciImage, rectangle: rectangle, sesson: detectorManager.session)
-            
-            delegate?.latestPhotoOutput = photoOutput
-        }
+        let windows = await UIApplication.shared.windows
+        guard let photoDetectorViewController = await windows.first?.rootViewController else { throw UIError.invalidRootViewController }
+        
+        let shapeLayer = await createShapeLayer(using: ciImage, as: rectangle, to: photoDetectorViewController)
+        
+        let rectangle = Rectangle(topLeft: rectangle.topLeft,
+                                  topRight: rectangle.topRight,
+                                  bottomLeft: rectangle.bottomLeft,
+                                  bottomRight: rectangle.bottomRight,
+                                  layer: shapeLayer)
+        
+        let photoOutput = PhotoOutput(image: ciImage, rectangle: rectangle, session: detectorManager.session)
+        
+        return photoOutput
     }
     
-    func createShapeLayer(using ciImage: CIImage, as rectangle: CIRectangleFeature, to viewController: UIViewController) -> CAShapeLayer {
+    func createShapeLayer(using ciImage: CIImage, as rectangle: CIRectangleFeature, to viewController: UIViewController) async -> CAShapeLayer {
         // MARK: - 이미지의 크기와 뷰의 크기를 사용하여 비율 계산
-        let scaleX = viewController.view.bounds.width / ciImage.extent.width
-        let scaleY = viewController.view.bounds.height / ciImage.extent.height
+        let scaleX = await viewController.view.bounds.width / ciImage.extent.width
+        let scaleY = await viewController.view.bounds.height / ciImage.extent.height
         
         // MARK: - 사각형의 좌표를 뷰의 좌표계로 변환
         let topLeft = CGPoint(x: rectangle.topLeft.x * scaleX-Constants.defaultXAxisCorrection, y: rectangle.topLeft.y * scaleY)
