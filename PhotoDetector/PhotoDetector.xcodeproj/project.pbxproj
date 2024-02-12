@@ -18,6 +18,7 @@
 		A641C6CE2B777AB200452B8C /* CameraSettingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641C6CB2B777AB200452B8C /* CameraSettingError.swift */; };
 		A641C6CF2B777AB200452B8C /* DetectorBuilderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641C6CC2B777AB200452B8C /* DetectorBuilderError.swift */; };
 		A652AE6F2B7A46670054E0D4 /* TimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A652AE6E2B7A46670054E0D4 /* TimeInterval+Extension.swift */; };
+		A66B737F2B7A67100080C8F3 /* PhotoDetectorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B737E2B7A67100080C8F3 /* PhotoDetectorViewControllerDelegate.swift */; };
 		A6A9E36F2B6B59F600034144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E36E2B6B59F600034144 /* AppDelegate.swift */; };
 		A6A9E3712B6B59F600034144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3702B6B59F600034144 /* SceneDelegate.swift */; };
 		A6A9E3732B6B59F600034144 /* PhotoDectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A9E3722B6B59F600034144 /* PhotoDectorViewController.swift */; };
@@ -54,6 +55,7 @@
 		A641C6CB2B777AB200452B8C /* CameraSettingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraSettingError.swift; sourceTree = "<group>"; };
 		A641C6CC2B777AB200452B8C /* DetectorBuilderError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectorBuilderError.swift; sourceTree = "<group>"; };
 		A652AE6E2B7A46670054E0D4 /* TimeInterval+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extension.swift"; sourceTree = "<group>"; };
+		A66B737E2B7A67100080C8F3 /* PhotoDetectorViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetectorViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A6A9E36B2B6B59F600034144 /* PhotoDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A9E36E2B6B59F600034144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6A9E3702B6B59F600034144 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,24 @@
 				A60949AC2B792B75004A1B18 /* UIError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		A66B737C2B7A66ED0080C8F3 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				A6A9E3722B6B59F600034144 /* PhotoDectorViewController.swift */,
+				A6A9E3A32B6BF90D00034144 /* PhotoPreviewViewController.swift */,
+				A6A9E3A52B6BF95900034144 /* PhotoRepointingViewController.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		A66B737D2B7A66F80080C8F3 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A66B737E2B7A67100080C8F3 /* PhotoDetectorViewControllerDelegate.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		A6A9E3622B6B59F600034144 = {
@@ -180,9 +200,8 @@
 		A6A9E3862B6B7FC800034144 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A6A9E3722B6B59F600034144 /* PhotoDectorViewController.swift */,
-				A6A9E3A32B6BF90D00034144 /* PhotoPreviewViewController.swift */,
-				A6A9E3A52B6BF95900034144 /* PhotoRepointingViewController.swift */,
+				A66B737C2B7A66ED0080C8F3 /* Implementation */,
+				A66B737D2B7A66F80080C8F3 /* Interface */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -380,6 +399,7 @@
 			files = (
 				A641C6CE2B777AB200452B8C /* CameraSettingError.swift in Sources */,
 				A6A9E3A22B6BBD3300034144 /* ConversionError.swift in Sources */,
+				A66B737F2B7A67100080C8F3 /* PhotoDetectorViewControllerDelegate.swift in Sources */,
 				A6A9E3942B6B8A8D00034144 /* DetectorBuilderProtocol.swift in Sources */,
 				A652AE6F2B7A46670054E0D4 /* TimeInterval+Extension.swift in Sources */,
 				A641C6CF2B777AB200452B8C /* DetectorBuilderError.swift in Sources */,
