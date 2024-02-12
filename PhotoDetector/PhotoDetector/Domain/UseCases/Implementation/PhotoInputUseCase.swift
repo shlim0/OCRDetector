@@ -31,7 +31,7 @@ final class PhotoInputUseCase: NSObject, PhotoInputUseCaseProtocol {
     }
     
     // MARK: - Public Methods
-    func startObservingDisplay() throws {
+    func startSession() throws {
         Task {
             guard await detectorManager.isAuthorized else { return }
         }
@@ -42,6 +42,10 @@ final class PhotoInputUseCase: NSObject, PhotoInputUseCaseProtocol {
             guard let self = self else { return }
             detectorManager.session.startRunning()
         }
+    }
+    
+    func endSession() {
+        detectorManager.session.stopRunning()
     }
 }
 
@@ -78,11 +82,11 @@ extension PhotoInputUseCase {
     }
     
     func drawPreviewLayer(using ciImage: CIImage, as rectangle: CIRectangleFeature) async throws -> PhotoOutput {
-        Task { @MainActor in
-            let windows = UIApplication.shared.windows
-            guard let photoDetectorViewController =  windows.first?.rootViewController else { return }
+        // MARK: - 단순히 View의 크기만 구해서 계산하는 데 사용하는 거라 사용해도 괜찮을 듯.
+        // 다만, rootVC이 변경되면 수정이 필요하게 됨. OCP에 취약
+        // 앱의 rootVC이 바뀔 것 같지는 않다고 판단하여 사용하기로 결정함.
         
-            let shapeLayer = createShapeLayer(using: ciImage, as: rectangle, to: photoDetectorViewController)
+        // !!!: 과제 명세 상, 혹시 모를 iOS 하위 버전에 대한 호환성을 고려하여 수정하지 않았음.
         let windows = await UIApplication.shared.windows
         guard let photoDetectorViewController = await windows.first?.rootViewController else { throw UIError.invalidRootViewController }
         

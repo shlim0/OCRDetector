@@ -39,10 +39,14 @@ final class PhotoDetectorViewModel: PhotoDetectorViewModelProtocol {
         photoOutputUseCase.delegate = self
     }
     
-    func handleDisplay() throws {
-        try photoInputUseCase.startObservingDisplay()
+    func observe() throws {
+        try photoInputUseCase.startSession()
     }
     
+    func release() {
+        photoInputUseCase.endSession()
+    }
+        
     // MARK: - Public Methods
     @objc
     func didTapShutterButton() {

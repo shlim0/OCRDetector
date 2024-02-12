@@ -15,6 +15,7 @@ protocol PhotoDetectorViewModelProtocol: AnyObject {
     var photoListener: ((PhotoOutput) -> Void)? { get set }
     var thumbnailListener: ((UIImage) -> Void)? { get set }
     
-    func handleDisplay() throws
+    func observe() throws
+    func release()
     func didTapShutterButton()
 }

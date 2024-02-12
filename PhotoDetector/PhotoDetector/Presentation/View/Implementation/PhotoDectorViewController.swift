@@ -16,32 +16,43 @@ final class PhotoDetectorViewController: UIViewController {
     }
     
     // MARK: - Dependency
-    private var viewModel: PhotoDetectorViewModelProtocol = PhotoDetectorViewModel()
+    private var viewModel: PhotoDetectorViewModelProtocol?
     private var timeCounter: Double = 0.0
     private var timer: Timer?
     
     // MARK: - Flag Property
     private var isAutomatic: Bool = false
-    
+        
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         startDisplay()
+        bind()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        endDisplay()
+    }
+        
     private func startDisplay() {
+        viewModel = PhotoDetectorViewModel()
+
         do {
-            try viewModel.handleDisplay()
+            try viewModel?.observe()
         } catch {
             print(error)
         }
+    }
+    
+    private func endDisplay() {
+        viewModel?.release()
+        viewModel = nil
     }
     
     // MARK: - View Elements
@@ -114,7 +125,7 @@ extension PhotoDetectorViewController {
     
     @objc
     private func shutterButtonHandler() {
-        viewModel.didTapShutterButton()
+        viewModel?.didTapShutterButton()
     }
     
     @objc
@@ -181,8 +192,8 @@ extension PhotoDetectorViewController {
     }
     
     private func bind() {
-        viewModel.photoListener = updateRectangleView
-        viewModel.thumbnailListener = updateThumbnailView
+        viewModel?.photoListener = updateRectangleView
+        viewModel?.thumbnailListener = updateThumbnailView
     }
     
     private func updateRectangleView(photo: PhotoOutput) {

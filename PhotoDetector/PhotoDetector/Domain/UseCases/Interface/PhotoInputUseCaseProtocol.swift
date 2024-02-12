@@ -11,5 +11,6 @@ import AVFoundation
 protocol PhotoInputUseCaseProtocol: AnyObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     var delegate: PhotoDetectorViewModelProtocol? { get set }
     
-    func startObservingDisplay() throws
+    func startSession() throws
+    func endSession()
 }
