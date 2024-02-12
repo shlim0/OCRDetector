@@ -49,11 +49,15 @@ extension PhotoOutputUseCase {
             
             guard let correctedCGImage = correctPerspective(of: ciImage, with: rectangle) else { return nil }
             guard let grayscaleCGImage = convertToGrayscale(correctedCGImage) else { return nil }
+            guard let adjustContrast = adjustContrast(grayscaleCGImage) else { return nil }
             
-            return adjustContrast(grayscaleCGImage)
+            return adjustContrast
         } catch {
-            print(error)
-            return nil
+            guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
+            guard let grayscaleCGImage = convertToGrayscale(cgImage) else { return nil }
+            guard let adjustContrast = adjustContrast(grayscaleCGImage) else { return nil }
+            
+            return adjustContrast
         }
     }
     
