@@ -12,10 +12,16 @@ final class PhotoDetectorViewController: UIViewController {
     // MARK: - Namespace
     private enum Constants {
         static let defaultLayoutMargin: Double = 10.0
+        static let defaultAutomatic: Double = 1.5
     }
     
     // MARK: - Dependency
     private var viewModel: PhotoDetectorViewModelProtocol = PhotoDetectorViewModel()
+    private var timeCounter: Double = 0.0
+    private var timer: Timer?
+    
+    // MARK: - Flag Property
+    private var isAutomatic: Bool = false
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -30,7 +36,7 @@ final class PhotoDetectorViewController: UIViewController {
         startDisplay()
     }
     
-    func startDisplay() {
+    private func startDisplay() {
         do {
             try viewModel.handleDisplay()
         } catch {
@@ -39,14 +45,14 @@ final class PhotoDetectorViewController: UIViewController {
     }
     
     // MARK: - View Elements
-    private let navigationLeftButton: UIBarButtonItem = {
-        let uiBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: PhotoDetectorViewController.self, action: nil)
+    private lazy var navigationLeftButton: UIBarButtonItem = {
+        let uiBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: self, action: nil)
         uiBarButtonItem.tintColor = .white
         return uiBarButtonItem
     }()
     
-    private let navigationRightButton: UIBarButtonItem = {
-        let uiBarButtonItem = UIBarButtonItem(title: "자동/수동", style: .plain, target: PhotoDetectorViewController.self, action: nil)
+    private lazy var navigationRightButton: UIBarButtonItem = {
+        let uiBarButtonItem = UIBarButtonItem(title: "자동/수동", style: .plain, target: self, action: #selector(toggleAutomaticButton))
         uiBarButtonItem.tintColor = .white
         
         return uiBarButtonItem
@@ -108,6 +114,11 @@ extension PhotoDetectorViewController {
     @objc
     private func shutterButtonHandler() {
         viewModel.didTapShutterButton()
+    }
+    
+    @objc
+    private func toggleAutomaticButton() {
+        isAutomatic.toggle()
     }
 }
 
@@ -174,15 +185,45 @@ extension PhotoDetectorViewController {
     }
     
     private func updateRectangleView(photo: PhotoOutput) {
-        previewLayer.session = photo.sesson
+        previewLayer.session = photo.session
         
         Task { @MainActor in
             previewLayer.sublayers?.removeSubrange(1...)
-            
+        }
+        
             if let rectangle = photo.rectangle {
-                previewLayer.addSublayer(rectangle.layer)
+        guard let rectangle = photo.rectangle else {
+            resetTimer()
+            return
+        }
+        
+        Task { @MainActor in
+            previewLayer.addSublayer(rectangle.layer)
+            
+            if isAutomatic {
+                setTimer()
+                timer?.fire()
             }
         }
+        
+        if timeCounter >= Constants.defaultAutomatic {
+            shutterButtonHandler()
+            resetTimer()
+        }
+    }
+    
+    private func setTimer() {
+        timer = Timer(timeInterval: .halfSecond, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            timeCounter += .halfSecond
+            print(timeCounter)
+        }
+    }
+    
+    private func resetTimer() {
+        timer = nil
+        timeCounter = .zero
+        timer?.invalidate()
     }
     
     private func updateThumbnailView(thumbnail: UIImage) {
