@@ -204,11 +204,11 @@ extension PhotoDetectorViewController {
                 setTimer()
                 timer?.fire()
             }
-        }
-        
-        if timeCounter >= Constants.defaultAutomatic {
-            shutterButtonHandler()
-            resetTimer()
+            
+            if timeCounter >= Constants.defaultAutomatic {
+                shutterButtonHandler()
+                resetTimer()
+            }
         }
     }
     
@@ -216,7 +216,6 @@ extension PhotoDetectorViewController {
         timer = Timer(timeInterval: .halfSecond, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             timeCounter += .halfSecond
-            print(timeCounter)
         }
     }
     
