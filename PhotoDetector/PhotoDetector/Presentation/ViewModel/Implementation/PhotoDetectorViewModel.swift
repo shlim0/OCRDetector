@@ -9,7 +9,6 @@ import UIKit
 import AVFoundation
 
 final class PhotoDetectorViewModel: PhotoDetectorViewModelProtocol {
-    
     // MARK: - Dependencies
     private let context: CIContext = CIContext()
     private lazy var photoInputUseCase: PhotoInputUseCaseProtocol = PhotoInputUseCase(context: context)
