@@ -7,6 +7,6 @@
 
 import CoreImage
 
-protocol Detectable {
+protocol Detectable: AnyObject {
     func features(in image: CIImage, options: [String : Any]?) -> [CIFeature]
 }

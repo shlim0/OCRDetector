@@ -8,7 +8,7 @@
 import CoreImage
 import AVFoundation
 
-protocol PhotoInputUseCaseProtocol: AVCaptureVideoDataOutputSampleBufferDelegate {
+protocol PhotoInputUseCaseProtocol: AnyObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     var delegate: PhotoDetectorViewModelProtocol? { get set }
     
     func startObservingDisplay() throws

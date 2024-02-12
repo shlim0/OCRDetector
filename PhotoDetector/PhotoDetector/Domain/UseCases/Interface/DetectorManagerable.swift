@@ -8,7 +8,7 @@
 import CoreImage
 import AVFoundation
 
-protocol DetectorManagerable {
+protocol DetectorManagerable: AnyObject {
     var session: AVCaptureSession { get }
     
     func setUpCamera(delegate: PhotoInputUseCaseProtocol) throws

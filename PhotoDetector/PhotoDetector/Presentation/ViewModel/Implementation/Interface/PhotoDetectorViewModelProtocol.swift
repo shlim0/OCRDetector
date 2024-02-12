@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol PhotoDetectorViewModelProtocol {
+protocol PhotoDetectorViewModelProtocol: AnyObject {
     var latestPhotoOutput: PhotoOutput? { get set }
     var latestThumbnail: UIImage? { get set }
     
