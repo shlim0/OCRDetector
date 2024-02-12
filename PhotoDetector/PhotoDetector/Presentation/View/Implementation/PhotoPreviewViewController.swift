@@ -14,11 +14,20 @@ final class PhotoPreviewViewController: UIViewController {
         static let defaultLayoutYMargin: Double = 10.0
     }
     
+    // MARK: - Delegate
+    weak var delegate: PhotoDetectorViewControllerDelegate?
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        delegate?.resetNavigationBarColor(self)
     }
     
     // MARK: - View Elements

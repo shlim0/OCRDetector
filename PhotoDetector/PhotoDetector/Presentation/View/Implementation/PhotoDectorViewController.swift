@@ -108,6 +108,7 @@ extension PhotoDetectorViewController {
     @objc
     private func thumbnailHandler() {
         let photoPreviewViewController = PhotoPreviewViewController()
+        photoPreviewViewController.delegate = self
         navigationController?.pushViewController(photoPreviewViewController, animated: true)
     }
     
@@ -191,7 +192,6 @@ extension PhotoDetectorViewController {
             previewLayer.sublayers?.removeSubrange(1...)
         }
         
-            if let rectangle = photo.rectangle {
         guard let rectangle = photo.rectangle else {
             resetTimer()
             return
@@ -227,5 +227,12 @@ extension PhotoDetectorViewController {
     
     private func updateThumbnailView(thumbnail: UIImage) {
         self.thumbnail.setImage(thumbnail, for: .normal)
+    }
+}
+
+// MARK: - PhotoDetectorViewControllerDelegate
+extension PhotoDetectorViewController: PhotoDetectorViewControllerDelegate {
+    func resetNavigationBarColor(_ self: PhotoPreviewViewController) {
+        navigationController?.navigationBar.backgroundColor = .defaultNavigationBarColor
     }
 }
