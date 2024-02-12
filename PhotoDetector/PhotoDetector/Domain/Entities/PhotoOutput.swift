@@ -11,5 +11,5 @@ import AVFoundation
 struct PhotoOutput {
     let image: CIImage
     let rectangle: Rectangle?
-    let sesson: AVCaptureSession
+    let session: AVCaptureSession
 }
