@@ -8,7 +8,7 @@
 import CoreImage
 import AVFoundation
 
-final class DetectorManager: DetectorManagerable {
+struct DetectorManager: DetectorManagerable {
     // MARK: - Namespace
     private enum Constants {
         static let aspectRatioA4: Double = 1.414
@@ -27,7 +27,7 @@ final class DetectorManager: DetectorManagerable {
         
         let device = try setDevice()
         let input = try setDeviceInput(device: device)
-        
+       
         try setVideoInput(input)
         try setPhotoOutput()
         try setVideoOutput(delegate)
@@ -89,6 +89,8 @@ extension DetectorManager {
         if session.canAddOutput(videoOutput) {
             session.addOutput(videoOutput)
             // MARK: - AVCaptureVideoDataOutput의 회전 설정
+                // !!!: .videoOrientation이 deprecated 되어 .videoRotationAngle를 사용하는 것이 맞으나,
+                // !!!: 과제 명세 상, 혹시 모를 iOS 하위 버전에 대한 호환성을 고려하여 수정하지 않았음.
             videoOutput.connection(with: .video)?.videoOrientation = .portrait
             // MARK: - ViewController로 delegate 하지 않고, Use Case에서 처리하도록 함.
             videoOutput.setSampleBufferDelegate(delegate, queue: DispatchQueue(label: "VideoQueue"))
