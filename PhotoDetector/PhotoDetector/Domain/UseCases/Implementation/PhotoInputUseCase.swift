@@ -23,7 +23,7 @@ final class PhotoInputUseCase: NSObject, PhotoInputUseCaseProtocol {
     private var isDrawing = false
     
     // MARK: - Delegate
-    var delegate: PhotoDetectorViewModelProtocol?
+    weak var delegate: PhotoDetectorViewModelProtocol?
     
     // MARK: - Life Cycle
     init(context: CIContext) {

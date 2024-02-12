@@ -21,7 +21,7 @@ final class PhotoOutputUseCase: NSObject, PhotoOutputUseCaseProtocol {
     private let detectorManager: DetectorManagerable = DetectorManager()
     
     // MARK: - Public Properties
-    var delegate: PhotoDetectorViewModelProtocol?
+    weak var delegate: PhotoDetectorViewModelProtocol?
     
     // MARK: - Life Cycle
     init(context: CIContext) {
