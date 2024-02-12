@@ -84,7 +84,7 @@ final class PhotoDetectorViewController: UIViewController {
         return button
     }()
     
-    private lazy var shutterButton: UIButton = {
+    private let shutterButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "circle.dashed.inset.filled"), for: .normal)
         button.addTarget(self, action: #selector(shutterButtonHandler), for: .touchUpInside)
