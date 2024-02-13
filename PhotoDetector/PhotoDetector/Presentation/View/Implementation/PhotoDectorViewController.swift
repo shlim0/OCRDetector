@@ -15,7 +15,7 @@ final class PhotoDetectorViewController: UIViewController {
         static let defaultAutomatic: Double = 1.5
     }
     
-    // MARK: - Dependency
+    // MARK: - Dependencies
     private var viewModel: PhotoDetectorViewModelProtocol?
     private var timeCounter: Double = 0.0
     private var timer: Timer?
@@ -39,7 +39,12 @@ final class PhotoDetectorViewController: UIViewController {
         super.viewWillDisappear(animated)
         endDisplay()
     }
-        
+    
+    private func bind() {
+        viewModel?.photoListener = updateRectangleView
+        viewModel?.thumbnailListener = updateThumbnailView
+    }
+            
     private func startDisplay() {
         viewModel = PhotoDetectorViewModel()
 
@@ -189,11 +194,6 @@ extension PhotoDetectorViewController {
             shutterButton.bottomAnchor.constraint(equalTo: thumbnail.bottomAnchor),
             shutterButton.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor)
         ])
-    }
-    
-    private func bind() {
-        viewModel?.photoListener = updateRectangleView
-        viewModel?.thumbnailListener = updateThumbnailView
     }
     
     private func updateRectangleView(photo: PhotoOutput) {
