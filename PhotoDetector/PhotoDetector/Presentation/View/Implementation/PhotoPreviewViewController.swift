@@ -14,6 +14,9 @@ final class PhotoPreviewViewController: UIViewController {
         static let defaultLayoutYMargin: Double = 10.0
     }
     
+    // MARK: - Dependencies
+    private var viewModel: PhotoPreviewViewModelProtocol = PhotoPreviewViewModel()
+    
     // MARK: - Delegate
     weak var delegate: PhotoDetectorViewControllerDelegate?
     
@@ -21,7 +24,12 @@ final class PhotoPreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureGesture()
         configureView()
+    }
+    
+    private func bind() {
+        viewModel.photoListener = updatePreview
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,6 +58,7 @@ final class PhotoPreviewViewController: UIViewController {
     private let trashButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "trash"), for: .normal)
+        button.addTarget(self, action: #selector(trashButtonHandler(index: )), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -59,6 +68,7 @@ final class PhotoPreviewViewController: UIViewController {
         let button = UIButton()
         button.setTitle("반시계", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.addTarget(self, action: #selector(counterclockwiseButtonHandler), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -67,6 +77,7 @@ final class PhotoPreviewViewController: UIViewController {
     private let resizeButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "crop"), for: .normal)
+        button.addTarget(self, action: #selector(resizeButtonHandler), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -82,8 +93,58 @@ final class PhotoPreviewViewController: UIViewController {
     }()
 }
 
+// MARK: - Action Handler
+extension PhotoPreviewViewController {
+    @objc
+    func swipeLeftHandler(gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .left {
+        }
+    }
+
+    @objc
+    func swipeRightHandler(gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .right {
+        }
+    }
+    
+    @objc
+    func trashButtonHandler(index: String) {
+        do {
+            try viewModel.didTapTrashButton(index: index)
+        } catch {
+            print(error)
+        }
+    }
+    
+    @objc
+    func counterclockwiseButtonHandler(index: String) {
+        do {
+            try viewModel.didTapCounterclockwiseButton(index: index)
+        } catch {
+            print(error)
+        }
+    }
+    
+    @objc
+    func resizeButtonHandler() {
+        let photoRepointingViewController = PhotoRepointingViewController()
+        navigationController?.pushViewController(photoRepointingViewController, animated: true)
+    }
+}
+
+
 // MARK: - Configuration
 extension PhotoPreviewViewController {
+    private func configureGesture() {
+        let leftRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeftHandler(gesture: )))
+        leftRecognizer.direction = .left
+        let rightRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeRightHandler(gesture: )))
+        rightRecognizer.direction = .right
+        
+        view.addGestureRecognizer(leftRecognizer)
+        view.addGestureRecognizer(rightRecognizer)
+    }
+    
     private func configureView() {
         view.addsubViews(statusBar, preview, bottomView)
         
@@ -154,5 +215,8 @@ extension PhotoPreviewViewController {
             resizeButton.centerYAnchor.constraint(equalTo: trashButton.centerYAnchor),
             resizeButton.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -Constants.defaultLayoutXMargin)
         ])
+    }
+    
+    private func updatePreview(photos: [Entity.Photo]) {
     }
 }
