@@ -10,6 +10,17 @@
 		A60435422B6CD520000F3C4D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60435412B6CD520000F3C4D /* UIView+Extension.swift */; };
 		A60949AD2B792B75004A1B18 /* UIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60949AC2B792B75004A1B18 /* UIError.swift */; };
 		A61412362B7A29F500197CD7 /* UInt64+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61412352B7A29F500197CD7 /* UInt64+Extension.swift */; };
+		A634CA7A2B7AFDE20091F533 /* PhotoPreviewViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634CA792B7AFDE20091F533 /* PhotoPreviewViewModelProtocol.swift */; };
+		A634CA7F2B7B00FF0091F533 /* PhotoEditUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634CA7E2B7B00FF0091F533 /* PhotoEditUseCase.swift */; };
+		A634CA812B7B01750091F533 /* DefaultPhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634CA802B7B01750091F533 /* DefaultPhotoRepository.swift */; };
+		A634CA832B7B02740091F533 /* RealmPhotoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634CA822B7B02740091F533 /* RealmPhotoStorage.swift */; };
+		A634CA852B7B02BD0091F533 /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634CA842B7B02BD0091F533 /* PhotoRepository.swift */; };
+		A634CA872B7B02CE0091F533 /* PhotoEditUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634CA862B7B02CE0091F533 /* PhotoEditUseCaseProtocol.swift */; };
+		A634CA8C2B7B03AC0091F533 /* RealmPhotoStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634CA8B2B7B03AC0091F533 /* RealmPhotoStorageProtocol.swift */; };
+		A634CA8F2B7B270B0091F533 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A634CA8E2B7B270B0091F533 /* Realm */; };
+		A634CA912B7B270B0091F533 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A634CA902B7B270B0091F533 /* RealmSwift */; };
+		A634CA942B7B31F70091F533 /* Results<Photo>+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634CA932B7B31F70091F533 /* Results<Photo>+Extension.swift */; };
+		A634CA962B7B33160091F533 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A634CA952B7B33160091F533 /* Entity.swift */; };
 		A641C6AC2B7779A500452B8C /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641C6AB2B7779A500452B8C /* Rectangle.swift */; };
 		A641C6B12B777A1600452B8C /* PhotoInputUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641C6AE2B777A1600452B8C /* PhotoInputUseCaseProtocol.swift */; };
 		A641C6B22B777A1600452B8C /* PhotoOutputUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A641C6AF2B777A1600452B8C /* PhotoOutputUseCaseProtocol.swift */; };
@@ -47,6 +58,15 @@
 		A60435412B6CD520000F3C4D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A60949AC2B792B75004A1B18 /* UIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIError.swift; sourceTree = "<group>"; };
 		A61412352B7A29F500197CD7 /* UInt64+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt64+Extension.swift"; sourceTree = "<group>"; };
+		A634CA792B7AFDE20091F533 /* PhotoPreviewViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewModelProtocol.swift; sourceTree = "<group>"; };
+		A634CA7E2B7B00FF0091F533 /* PhotoEditUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditUseCase.swift; sourceTree = "<group>"; };
+		A634CA802B7B01750091F533 /* DefaultPhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPhotoRepository.swift; sourceTree = "<group>"; };
+		A634CA822B7B02740091F533 /* RealmPhotoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPhotoStorage.swift; sourceTree = "<group>"; };
+		A634CA842B7B02BD0091F533 /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
+		A634CA862B7B02CE0091F533 /* PhotoEditUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditUseCaseProtocol.swift; sourceTree = "<group>"; };
+		A634CA8B2B7B03AC0091F533 /* RealmPhotoStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPhotoStorageProtocol.swift; sourceTree = "<group>"; };
+		A634CA932B7B31F70091F533 /* Results<Photo>+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Results<Photo>+Extension.swift"; sourceTree = "<group>"; };
+		A634CA952B7B33160091F533 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		A641C6AB2B7779A500452B8C /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		A641C6AE2B777A1600452B8C /* PhotoInputUseCaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInputUseCaseProtocol.swift; sourceTree = "<group>"; };
 		A641C6AF2B777A1600452B8C /* PhotoOutputUseCaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoOutputUseCaseProtocol.swift; sourceTree = "<group>"; };
@@ -87,18 +107,81 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A634CA912B7B270B0091F533 /* RealmSwift in Frameworks */,
+				A634CA8F2B7B270B0091F533 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A634CA7B2B7B00290091F533 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A634CA7C2B7B00440091F533 /* Repositories */,
+				A634CA7D2B7B004E0091F533 /* PersistentStorages */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A634CA7C2B7B00440091F533 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A634CA802B7B01750091F533 /* DefaultPhotoRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A634CA7D2B7B004E0091F533 /* PersistentStorages */ = {
+			isa = PBXGroup;
+			children = (
+				A634CA8A2B7B039F0091F533 /* Implementation */,
+				A634CA892B7B03990091F533 /* Interface */,
+			);
+			path = PersistentStorages;
+			sourceTree = "<group>";
+		};
+		A634CA882B7B02DA0091F533 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A634CA842B7B02BD0091F533 /* PhotoRepository.swift */,
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
+		A634CA892B7B03990091F533 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A634CA8B2B7B03AC0091F533 /* RealmPhotoStorageProtocol.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		A634CA8A2B7B039F0091F533 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				A634CA822B7B02740091F533 /* RealmPhotoStorage.swift */,
+				A634CA922B7B31C50091F533 /* EntityMapping */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		A634CA922B7B31C50091F533 /* EntityMapping */ = {
+			isa = PBXGroup;
+			children = (
+				A634CA932B7B31F70091F533 /* Results<Photo>+Extension.swift */,
+			);
+			path = EntityMapping;
+			sourceTree = "<group>";
+		};
 		A641C6AD2B777A1600452B8C /* Interface */ = {
 			isa = PBXGroup;
 			children = (
 				A641C6AE2B777A1600452B8C /* PhotoInputUseCaseProtocol.swift */,
 				A641C6AF2B777A1600452B8C /* PhotoOutputUseCaseProtocol.swift */,
+				A634CA862B7B02CE0091F533 /* PhotoEditUseCaseProtocol.swift */,
 				A641C6B02B777A1600452B8C /* DetectorManagerable.swift */,
+				A634CA882B7B02DA0091F533 /* Repository */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -154,6 +237,7 @@
 				A6A9E3822B6B7F2E00034144 /* Application */,
 				A6A9E3842B6B7FB400034144 /* Presentation */,
 				A6A9E3872B6B803500034144 /* Domain */,
+				A634CA7B2B7B00290091F533 /* Data */,
 				A6A9E3832B6B7F3F00034144 /* Resources */,
 			);
 			path = PhotoDetector;
@@ -278,6 +362,7 @@
 				A6A9E3AC2B6C02A000034144 /* Photo.swift */,
 				A6DCFDDB2B74A816007226FE /* PhotoOutput.swift */,
 				A641C6AB2B7779A500452B8C /* Rectangle.swift */,
+				A634CA952B7B33160091F533 /* Entity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -314,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				A6DCFDDF2B74A85C007226FE /* PhotoDetectorViewModelProtocol.swift */,
+				A634CA792B7AFDE20091F533 /* PhotoPreviewViewModelProtocol.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -323,6 +409,7 @@
 			children = (
 				A6A9E3AE2B6C7E4500034144 /* PhotoInputUseCase.swift */,
 				A6A9E3882B6B808D00034144 /* PhotoOutputUseCase.swift */,
+				A634CA7E2B7B00FF0091F533 /* PhotoEditUseCase.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -343,6 +430,10 @@
 			dependencies = (
 			);
 			name = PhotoDetector;
+			packageProductDependencies = (
+				A634CA8E2B7B270B0091F533 /* Realm */,
+				A634CA902B7B270B0091F533 /* RealmSwift */,
+			);
 			productName = PhotoDetector;
 			productReference = A6A9E36B2B6B59F600034144 /* PhotoDetector.app */;
 			productType = "com.apple.product-type.application";
@@ -371,6 +462,9 @@
 				Base,
 			);
 			mainGroup = A6A9E3622B6B59F600034144;
+			packageReferences = (
+				A634CA8D2B7B270B0091F533 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = A6A9E36C2B6B59F600034144 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -398,24 +492,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				A641C6CE2B777AB200452B8C /* CameraSettingError.swift in Sources */,
+				A634CA812B7B01750091F533 /* DefaultPhotoRepository.swift in Sources */,
 				A6A9E3A22B6BBD3300034144 /* ConversionError.swift in Sources */,
 				A66B737F2B7A67100080C8F3 /* PhotoDetectorViewControllerDelegate.swift in Sources */,
 				A6A9E3942B6B8A8D00034144 /* DetectorBuilderProtocol.swift in Sources */,
+				A634CA832B7B02740091F533 /* RealmPhotoStorage.swift in Sources */,
 				A652AE6F2B7A46670054E0D4 /* TimeInterval+Extension.swift in Sources */,
 				A641C6CF2B777AB200452B8C /* DetectorBuilderError.swift in Sources */,
 				A6A9E3732B6B59F600034144 /* PhotoDectorViewController.swift in Sources */,
 				A6A9E36F2B6B59F600034144 /* AppDelegate.swift in Sources */,
 				A6A9E3972B6BAE4000034144 /* CIDetector+Extension.swift in Sources */,
+				A634CA7A2B7AFDE20091F533 /* PhotoPreviewViewModelProtocol.swift in Sources */,
 				A6A9E3A82B6BFA1100034144 /* PhotoRepointingViewModel.swift in Sources */,
 				A6DCFDE02B74A85C007226FE /* PhotoDetectorViewModelProtocol.swift in Sources */,
+				A634CA852B7B02BD0091F533 /* PhotoRepository.swift in Sources */,
 				A6DCFDE32B74B016007226FE /* DetectorManager.swift in Sources */,
 				A6A9E39F2B6BBCF700034144 /* Detectable.swift in Sources */,
 				A6A9E3AF2B6C7E4500034144 /* PhotoInputUseCase.swift in Sources */,
 				A641C6B12B777A1600452B8C /* PhotoInputUseCaseProtocol.swift in Sources */,
 				A6A9E3992B6BAEE300034144 /* PhotoDetectorViewModel.swift in Sources */,
+				A634CA962B7B33160091F533 /* Entity.swift in Sources */,
 				A6A9E3AD2B6C02A000034144 /* Photo.swift in Sources */,
 				A641C6CD2B777AB200452B8C /* CameraError.swift in Sources */,
 				A6A9E3712B6B59F600034144 /* SceneDelegate.swift in Sources */,
+				A634CA942B7B31F70091F533 /* Results<Photo>+Extension.swift in Sources */,
 				A61412362B7A29F500197CD7 /* UInt64+Extension.swift in Sources */,
 				A6A9E3A62B6BF95900034144 /* PhotoRepointingViewController.swift in Sources */,
 				A60435422B6CD520000F3C4D /* UIView+Extension.swift in Sources */,
@@ -426,9 +526,12 @@
 				A6A9E3AA2B6BFA1F00034144 /* PhotoPreviewViewModel.swift in Sources */,
 				A60949AD2B792B75004A1B18 /* UIError.swift in Sources */,
 				A6A9E3922B6B8A6300034144 /* DetectorBuilder.swift in Sources */,
+				A634CA7F2B7B00FF0091F533 /* PhotoEditUseCase.swift in Sources */,
 				A641C6AC2B7779A500452B8C /* Rectangle.swift in Sources */,
+				A634CA872B7B02CE0091F533 /* PhotoEditUseCaseProtocol.swift in Sources */,
 				A641C6B32B777A1600452B8C /* DetectorManagerable.swift in Sources */,
 				A6A9E3B52B6CAA7500034144 /* UIColor+Extension.swift in Sources */,
+				A634CA8C2B7B03AC0091F533 /* RealmPhotoStorageProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +748,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A634CA8D2B7B270B0091F533 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A634CA8E2B7B270B0091F533 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A634CA8D2B7B270B0091F533 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		A634CA902B7B270B0091F533 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A634CA8D2B7B270B0091F533 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A6A9E3632B6B59F600034144 /* Project object */;
 }
