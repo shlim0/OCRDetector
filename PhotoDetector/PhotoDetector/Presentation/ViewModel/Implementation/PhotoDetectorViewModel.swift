@@ -39,6 +39,7 @@ final class PhotoDetectorViewModel: PhotoDetectorViewModelProtocol {
         photoOutputUseCase.delegate = self
     }
     
+    // MARK: - Public Methods
     func observe() throws {
         try photoInputUseCase.startSession()
     }
@@ -47,8 +48,6 @@ final class PhotoDetectorViewModel: PhotoDetectorViewModelProtocol {
         photoInputUseCase.endSession()
     }
         
-    // MARK: - Public Methods
-    @objc
     func didTapShutterButton() {
         guard let photo = latestPhotoOutput else { return }
         let image = photoOutputUseCase.capture(photo)
