@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-protocol PhotoOutputUseCaseProtocol: AnyObject, AVCapturePhotoCaptureDelegate {
+protocol PhotoOutputUseCaseProtocol: AnyObject {
     var delegate: PhotoDetectorViewModelProtocol? { get set }
     
     func capture(_ photo: PhotoOutput) -> UIImage
